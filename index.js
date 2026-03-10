@@ -2,6 +2,13 @@ const TelegramBot = require("node-telegram-bot-api")
 const WebSocket = require("ws")
 const { BOT_TOKEN, CHAT_ID, SOLANA_RPC } = require("./config")
 
+console.log("RPC URL:", SOLANA_RPC)
+
+if(!SOLANA_RPC){
+  console.log("ERROR: SOLANA_RPC is missing")
+  process.exit(1)
+}
+
 const bot = new TelegramBot(BOT_TOKEN, { polling:false })
 
 console.log("Starting Pump tracker...")
