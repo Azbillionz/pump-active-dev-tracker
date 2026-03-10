@@ -1,0 +1,11 @@
+{
+  "name": "pump-active-dev-tracker",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "commonjs",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "node-telegram-bot-api": "^0.66.0",
+    "ws": "^8.17.0"
+  }
+}
