@@ -39,7 +39,7 @@ function connectWebSocket() {
             try {
                 const parsed = JSON.parse(data);
                 if (parsed) {
-                    const message = NEW SOLANA EVENT DETECTED\n\nRaw Data:\n${JSON.stringify(parsed).slice(0, 500)};
+                    const message = `NEW SOLANA EVENT DETECTED\n\nRaw Data:\n${JSON.stringify(parsed).slice(0, 500)}`;
                     bot.sendMessage(CHAT_ID, message).catch((err) => {
                         console.error("Failed to send Telegram message:", err.message);
                     });
@@ -67,7 +67,7 @@ function connectWebSocket() {
 function reconnect() {
     if (reconnectAttempts < MAX_RECONNECT_ATTEMPTS) {
         reconnectAttempts++;
-        console.log(Attempting to reconnect... (${reconnectAttempts}/${MAX_RECONNECT_ATTEMPTS}) in ${RECONNECT_DELAY}ms);
+        console.log(`Attempting to reconnect... (${reconnectAttempts}/${MAX_RECONNECT_ATTEMPTS}) in ${RECONNECT_DELAY}ms`);
         setTimeout(() => {
             connectWebSocket();
         }, RECONNECT_DELAY);
